@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr" manifest="cache.appcache">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ViralTech Market | PS4 Host</title>
+<style>
+html,body{margin:0;padding:0;min-height:100%;background:#1A1920;color:#f4f4f5;font:15px/1.45 Arial,Helvetica,sans-serif}
+*{box-sizing:border-box}
+body{background:radial-gradient(ellipse at 50% 0%,#302b20 0%,#1A1920 55%,#101014 100%)}
+#brand{text-align:center;padding:12px 10px;background:rgba(0,0,0,.35);border-bottom:1px solid #49412d}
+#brand img{width:36px;height:36px;margin-right:9px;vertical-align:middle}
+#brand b{font-size:16px;font-weight:800;letter-spacing:.12em;color:#ffd84d;vertical-align:middle}
+#wrap{padding:18px 20px;margin:0 auto;max-width:980px}
+#state{font-size:22px;font-weight:700;margin:0 0 8px;text-align:center}
+#det{font-size:14px;color:#b9b4a4;margin:0 0 6px;text-align:center}
+#cache{font-size:12px;color:#8f897a;margin:0 0 12px;min-height:16px;text-align:center}
+#cache.cacheok{color:#9fd8a7}
+.ok{color:#9fd8a7}.bad{color:#ff8c7d}.warn{color:#ffd84d}
+.hidden{display:none!important}
+#vtm-ad,#activationBox{position:fixed;z-index:1000;inset:0;display:flex;align-items:center;justify-content:center;padding:18px;background:rgba(13,12,16,.98);overflow:auto}
+#vtm-ad.hidden,#activationBox.hidden{display:none!important}
+.card{width:100%;max-width:740px;padding:clamp(20px,4vw,38px);text-align:center;border:1px solid #66572c;border-radius:18px;background:linear-gradient(145deg,#25231f,#131318);box-shadow:0 18px 60px rgba(0,0,0,.45)}
+.eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#ffd84d;font-weight:bold}
+h2{font-size:clamp(25px,4.5vw,42px);line-height:1.1;margin:14px 0 12px}
+.card p{color:#d0ccbf;line-height:1.55;margin:0 auto 18px;max-width:570px}
+.prices{display:flex;gap:10px;margin:20px 0}
+.price{flex:1;min-width:0;padding:13px 7px;border:1px solid #51472b;border-radius:11px;background:rgba(0,0,0,.22)}
+.price b{display:block;font-size:clamp(12px,2vw,17px);margin-bottom:8px}
+.price strong{display:block;color:#ffd84d;font-size:clamp(19px,3.2vw,30px)}
+.price small{display:block;color:#aaa394;margin-top:4px}
+.contact{font-size:clamp(12px,1.8vw,16px);line-height:1.8;color:#f1eee5;overflow-wrap:anywhere}
+.progress{height:4px;background:#403b30;border-radius:5px;overflow:hidden;margin:18px auto 0;max-width:420px}
+.progress span{display:block;height:100%;width:0;background:#ffd84d;animation:progress 5.6s linear forwards}
+@keyframes progress{to{width:100%}}
+#inputCode{display:block;width:min(340px,100%);height:48px;margin:18px auto 10px;padding:10px;font-size:20px;text-align:center;border-radius:10px;border:2px solid #ffd84d;background:rgba(0,0,0,.5);color:#fff;letter-spacing:.12em}
+button{padding:12px 22px;border-radius:10px;border:1px solid #e5bd37;background:#ffd84d;color:#17150d;font-size:16px;font-weight:bold;cursor:pointer}
+button:focus,button:hover{background:#ffe985;outline:2px solid #fff2b0}
+#licenseMessage{min-height:22px;margin-top:12px;font-size:13px;color:#ff8c7d}
+#assistance{font-size:12px;color:#a8a294;margin-top:14px}
+@media(max-width:560px){#wrap{padding:14px 10px}.prices{gap:5px}.price{padding:12px 3px}.card{padding:22px 13px}#brand b{font-size:14px}}
+</style>
+</head>
+<body>
+<div id="brand"><img src="viraltech-logo.svg" alt="ViralTech Market"><b>VIRALTECH MARKET</b></div>
+
+<div id="vtm-ad" role="dialog" aria-label="Présentation des services ViralTech Market">
+  <section class="card">
+    <div class="eyebrow">Technologie · Gaming · Assistance</div>
+    <h2>ViralTech Market</h2>
+    <p>Services gaming, installation sur consoles compatibles, optimisation et assistance technique. L’accès au host s’ouvrira après cette présentation.</p>
+    <div class="prices">
+      <div class="price"><b>PlayStation 3</b><strong>1 000 F CFA</strong><small>par jeu</small></div>
+      <div class="price"><b>PlayStation 4</b><strong>2 000 F CFA</strong><small>par jeu</small></div>
+      <div class="price"><b>PlayStation 5</b><strong>5 000 F CFA</strong><small>par jeu</small></div>
+    </div>
+    <div class="contact">Assistance : <b>+226 05 28 47 06</b> · <b>+226 72 74 45 95</b><br>assistance@viraltechmarket.com</div>
+    <div class="progress"><span></span></div>
+  </section>
+</div>
+
+<div id="activationBox" class="hidden" role="dialog" aria-label="Activation de l’accès">
+  <section class="card">
+    <div class="eyebrow">Accès client</div>
+    <h2>Activation ViralTech</h2>
+    <p>Saisissez votre code d’accès pour continuer vers le host PS4.</p>
+    <form id="activationForm">
+      <input id="inputCode" inputmode="numeric" autocomplete="off" maxlength="10" pattern="[0-9]{10}" placeholder="Code à 10 chiffres" aria-label="Code d’accès à 10 chiffres" required>
+      <button type="submit">Valider et continuer</button>
+    </form>
+    <div id="licenseMessage" aria-live="polite"></div>
+    <div id="assistance">Assistance : +226 05 28 47 06 · +226 72 74 45 95</div>
+  </section>
+</div>
+
+<div id="wrap">
+  <div id="state">Préparation de l’accès…</div>
+  <div id="det"></div>
+  <div id="cache"></div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var STORAGE_KEY = "vtm_premium_active";
+  var adEl = document.getElementById("vtm-ad");
+  var activationEl = document.getElementById("activationBox");
+  var formEl = document.getElementById("activationForm");
+  var inputEl = document.getElementById("inputCode");
+  var licenseMsg = document.getElementById("licenseMessage");
+  var stateEl = document.getElementById("state");
+  var detEl = document.getElementById("det");
+  var cacheEl = document.getElementById("cache");
+  var started = false;
+
+  function setState(t, c) { stateEl.textContent = t; stateEl.className = c || ""; }
+  function setCache(t, ok) { cacheEl.textContent = t; cacheEl.className = ok ? "cacheok" : ""; }
+
+  function isActivated() {
+    try { return localStorage.getItem(STORAGE_KEY) === "true"; }
+    catch (e) { return false; }
+  }
+
+  function validCode(code) {
+    // Filtre local simple : 10 chiffres, préfixe 26 et somme divisible par 7.
+    // Ce n'est pas une protection de licence sécurisée côté serveur.
+    if (!/^26[0-9]{8}$/.test(code)) return false;
+    var sum = 0;
+    for (var i = 0; i < code.length; i++) sum += Number(code.charAt(i));
+    return sum % 7 === 0;
+  }
+
+  function showActivation() {
+    activationEl.classList.remove("hidden");
+    try { inputEl.focus(); } catch (e) {}
+  }
+
+  function startHost() {
+    if (started) return;
+    started = true;
+    activationEl.classList.add("hidden");
+    var params = new URLSearchParams(location.search);
+
+    // Firmwares présents dans la table de ce build.
+    var SUPPORTED = { 1302: 1, 1304: 1, 1350: 1, 1352: 1 };
+    var key = null, fwnum = null;
+    var m = /PlayStation\s+4[\/ ](\d+)\.(\d+)/.exec(navigator.userAgent);
+    if (m) {
+      var minor = parseInt(m[2], 16).toString(16);
+      if (minor.length < 2) minor = "0" + minor;
+      key = m[1] + "." + minor;
+      fwnum = parseInt(m[1], 10) * 100 + parseInt(minor, 10);
+    }
+
+    var forced = params.get("force") === "1";
+    var supported = forced || (fwnum !== null && SUPPORTED[fwnum] === 1);
+    detEl.innerHTML = "Firmware <b>" + (key || "inconnu") + "</b>" +
+      (supported ? " · <b>pris en charge par cette interface</b>" : " · firmware non répertorié dans cette interface");
+
+    var target = "jb.html" + location.search;
+    function go() { setState("Chargement du host…", "warn"); location.replace(target); }
+    function waitForTap(msg, action) {
+      setState(msg, "warn");
+      function fire() {
+        window.removeEventListener("click", fire);
+        window.removeEventListener("keydown", fire);
+        action();
+      }
+      window.addEventListener("click", fire);
+      window.addEventListener("keydown", fire);
+    }
+
+    if (!supported) {
+      setState("Firmware non répertorié", "bad");
+      waitForTap("Firmware " + (key || "inconnu") + " — appuyez sur X ou cliquez pour continuer", go);
+      return;
+    }
+
+    var ac = window.applicationCache;
+    if (!ac || !document.documentElement.hasAttribute("manifest")) {
+      go();
+    } else if (!navigator.onLine) {
+      setCache("Hors ligne — utilisation du cache", true);
+      go();
+    } else if (ac.status === ac.IDLE) {
+      setCache("Cache prêt", true);
+      go();
+    } else if (ac.status === ac.UPDATEREADY) {
+      try { ac.swapCache(); } catch (e) {}
+      setCache("Mise à jour téléchargée", true);
+      waitForTap("Mise à jour prête — appuyez sur X pour recharger", function () { location.reload(); });
+    } else {
+      setCache("Vérification du cache…");
+      ac.addEventListener("downloading", function () { setCache("Mise en cache hors ligne…"); }, false);
+      ac.addEventListener("progress", function (e) {
+        if (e && e.total) setCache("Mise en cache " + Math.round((e.loaded / e.total) * 100) + "%");
+      }, false);
+      ac.addEventListener("cached", function () {
+        setCache("Cache prêt pour une utilisation hors ligne", true);
+        waitForTap("Cache prêt — appuyez sur X pour continuer", go);
+      }, false);
+      ac.addEventListener("updateready", function () {
+        try { ac.swapCache(); } catch (e) {}
+        setCache("Mise à jour téléchargée", true);
+        waitForTap("Mise à jour prête — appuyez sur X pour recharger", function () { location.reload(); });
+      }, false);
+      ac.addEventListener("noupdate", function () {
+        setCache("Cache prêt — hors ligne disponible", true);
+        go();
+      }, false);
+      ac.addEventListener("error", function () {
+        setCache("Cache indisponible");
+        waitForTap("Échec du cache — appuyez sur X pour continuer", go);
+      }, false);
+      ac.addEventListener("obsolete", function () {
+        setCache("Cache obsolète");
+        waitForTap("Cache obsolète — appuyez sur X pour continuer", go);
+      }, false);
+    }
+  }
+
+  formEl.addEventListener("submit", function (event) {
+    event.preventDefault();
+    var code = inputEl.value.replace(/\s/g, "");
+    if (!validCode(code)) {
+      licenseMsg.textContent = "Code invalide : 10 chiffres, préfixe 26 et somme des chiffres divisible par 7.";
+      return;
+    }
+    try {
+      localStorage.setItem(STORAGE_KEY, "true");
+      if (localStorage.getItem(STORAGE_KEY) !== "true") throw new Error("storage unavailable");
+    } catch (e) {
+      licenseMsg.textContent = "Impossible de mémoriser l’activation dans ce navigateur.";
+      return;
+    }
+    licenseMsg.style.color = "#9fd8a7";
+    licenseMsg.textContent = "Activation enregistrée. Préparation du host…";
+    window.setTimeout(startHost, 700);
+  });
+
+  // L'écran de marque s'affiche brièvement. Le host ne démarre qu'après l'activation.
+  window.setTimeout(function () {
+    adEl.classList.add("hidden");
+    if (isActivated()) startHost();
+    else showActivation();
+  }, 5600);
+})();
+</script>
+</body>
+</html>
