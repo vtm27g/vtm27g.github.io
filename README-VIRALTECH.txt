@@ -1,40 +1,34 @@
-# ViralTech Market — Console Host (Afterglow integration)
+# ViralTech Market — VTM27 Major Update (release candidate)
 
-## Ce que contient cette version
-- Host console, et non un site vitrine classique.
-- Écran d'activation ViralTech Market conservant le point d'accès du service de licence de la version fournie.
-- Confirmation de licence avec date locale, puis écran de sélection du payload.
-- Carrousel de présentations commerciales locales pendant l'attente et le compte à rebours de lancement.
-- Publicités/présentations : accessoires gaming, gestion de stock, création web et visibilité digitale.
-- Présentation de GoldHEN sous le libellé « GoldHEN · présentation ViralTech Market ». Le binaire GoldHEN et ses crédits ne sont pas modifiés.
-- Moteur Afterglow complet et fichiers d'origine copiés depuis l'archive Afterglow fournie.
+## Contenu intégré
+Cette version assemble l'interface et l'activation ViralTech Market avec le moteur Afterglow fourni dans l'archive source.
 
-## Firmwares annoncés par le projet Afterglow fourni
-12.00, 12.02, 12.50, 12.52, 13.00, 13.02, 13.04, 13.50, 13.52, 14.00 et 14.02.
+- Firmware annoncés par le projet Afterglow : 12.00, 12.02, 12.50, 12.52, 13.00, 13.02, 13.04, 13.50, 13.52, 14.00 et 14.02.
+- Moteur navigateur : `jb.js`, `core.js`, `mem.js`, `int64.js`, `ps4_offsets.js` et `afterglow.js` issus de l'archive Afterglow.
+- Payloads : `hen.bin` et `goldhen.bin` issus de l'archive Afterglow.
+- Correctifs noyau : les onze fichiers `patchset-*.bin` correspondants sont inclus.
+- Activation ViralTech : endpoint conservé dans `activation-config.js`.
+- Compatibilité de l'activation précédente : les enregistrements `vtm27_activation_v1` sont migrés vers `vtm27_activation_v2` sur le même navigateur.
+- Présentation : catalogue et informations commerciales restent sur la page d'accueil. Aucun élément publicitaire n'est injecté dans la page d'exécution du moteur.
 
-Il ne s'agit pas de tous les sous-firmwares imaginables entre 12.00 et 14.02 : seuls les onze firmwares listés dans le README source sont annoncés. Le moteur doit refuser les versions sans profil correspondant.
+## Utilisation et publication
+1. Faire une copie de sauvegarde du dépôt GitHub actuel.
+2. Extraire le contenu de cette archive.
+3. Publier le contenu du dossier à la racine de `vtm27g.github.io`.
+4. Vérifier que `activation-config.js` pointe toujours vers le service d'activation déployé.
+5. Ouvrir `https://vtm27g.github.io/` depuis le navigateur de la console.
+6. Effectuer d'abord un test de présentation et d'activation, puis un test du moteur sur une console de test sans données importantes.
 
-## Pourquoi les publicités ne s'affichent pas sur la page d'exécution
-La documentation technique Afterglow explique que la page d'exécution doit rester très légère : toute ressource supplémentaire peut modifier le timing et l'allocation mémoire au moment critique. Le carrousel est donc placé sur l'écran de lancement, avant la navigation vers `jb.html`. Il s'arrête avant le démarrage de la chaîne d'exploitation. La page `jb.html` ne charge aucune publicité, analytics, police distante ou image animée pendant l'exécution.
+## Avertissement de stabilité
+Le moteur est un exploit noyau. Aucun changement logiciel ne peut garantir zéro échec, zéro redémarrage ou zéro Kernel Panic. Le README Afterglow décrit les firmwares pris en charge et les essais réalisés par ses auteurs, mais l'intégration ViralTech Market de cette archive n'a pas été testée sur matériel PS4 dans cet environnement. Ne présentez pas cette version comme garantie sans essais réels sur chaque firmware et modèle ciblés.
 
-## Branding GoldHEN
-Le nom affiché dans le choix du payload et dans l'interface du host peut être accompagné de « Présentation ViralTech Market ». Le binaire `goldhen.bin` n'est pas modifié : son identité, ses crédits et ses conditions de redistribution sont conservés. Cette archive ne prétend pas que ViralTech Market est l'auteur de GoldHEN.
+Les firmwares non répertoriés par le moteur doivent être refusés. Ne forcez pas l'exécution avec des offsets d'une autre version.
+
+## Vérification du binaire PS4-HEN
+Le README de l'archive Afterglow annonce pour `hen.bin` le MD5 `6417a84a72f9c7988f0e33b3ae190542` (version corrigée), mais le fichier réellement fourni dans cette archive produit le MD5 `e7df7fb94e58a1b4a4a5e7dda4f190e1`. Ces valeurs ne correspondent pas. Pour éviter de risquer un gel de console, PS4-HEN est donc désactivé dans le sélecteur de cette release candidate. GoldHEN reste le choix activé par défaut. Ne réactivez PS4-HEN qu'après obtention et vérification d'un binaire correspondant au hash attendu ou confirmation fiable de l'auteur.
 
 ## Activation
-Le code est vérifié par le service configuré dans `activation-config.js`. Après validation, l'enregistrement est mémorisé dans le stockage local du navigateur. Effacer les données du navigateur peut supprimer cet enregistrement. Le contrôle local sert à éviter une nouvelle saisie sur le même navigateur ; il ne remplace pas une validation serveur.
+La validation initiale dépend du service distant configuré. L'accès local est mémorisé dans le navigateur pour éviter de redemander le code à chaque visite. Comme tout contrôle côté navigateur, un marqueur local peut être modifié par un utilisateur ayant le contrôle de l'appareil : la décision d'autorisation réelle doit rester côté serveur.
 
-## Publication et cache
-1. Sauvegarder le dépôt actuel.
-2. Extraire le contenu de cette archive à la racine du dépôt GitHub Pages.
-3. Vérifier que `activation-config.js` contient toujours le bon endpoint.
-4. Publier tous les fichiers sans modifier les dossiers `patchset` ou les binaires.
-5. Effacer l'ancien cache du navigateur de la console ou attendre la mise à jour du manifeste.
-6. Tester d'abord l'activation et l'écran de lancement, puis les firmwares sur console de test.
-
-Le manifeste `cache.appcache` est régénéré pour cette archive. La compatibilité du cache dépend du navigateur de la console.
-
-## Avertissement
-L'exploit noyau peut échouer et provoquer un redémarrage ou un Kernel Panic. Le projet Afterglow décrit les essais et limites dans `README.md` et `TECHNICAL.md`. Les vérifications effectuées ici sont statiques ; aucune console PS4 physique n'a été testée dans cet environnement.
-
-## Licences et crédits
-Conserver `LICENSE`, `LICENSE-raw13g`, `README.md` et `TECHNICAL.md`. Les fichiers provenant d'Afterglow, raw13g et GoldHEN gardent leurs crédits et leurs licences d'origine.
+## Fichiers techniques et licences
+Consulter `TECHNICAL.md`, `UPSTREAM-README.md`, `LICENSE` et `LICENSE-raw13g`. Les composants conservent leurs licences et attributions d'origine.
