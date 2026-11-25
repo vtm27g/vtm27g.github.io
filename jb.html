@@ -182,15 +182,15 @@
     <!-- jb.js owns the body class: .log while the step log is shown, .done or
          .fail once the chain has settled. The ids below are its contract --
          #ramBox, #msg, #state and #out are read by name. -->
-    <div id="brand"><b>VIRALTECH MARKET · ENVIRONNEMENT CONSOLE PS4</b></div>
-    <div id="ramBox">VIRALTECH MARKET · Préparation de la mémoire…</div>
+    <div id="brand"><b>VIRALTECH MARKET · GOLDHEN / PS4-HEN HOST</b></div>
+    <div id="ramBox">RAM: checking...</div>
     <div id="spin"></div>
-    <div id="msg">Redémarrez votre console</div>
+    <div id="msg">Restart your console</div>
     <div id="wrap">
       <div id="state"></div>
       <div id="out"></div>
     </div>
-    <p class="byline">ViralTech Market · Initialisation du système console</p>
+    <p class="byline">ViralTech Market · moteur Afterglow · crédits et licences dans les fichiers du projet</p>
     <script>
       (function () {
         var r = null;
@@ -206,7 +206,7 @@
         s.src = "jb.js";
         s.onerror = function () {
           document.body.className = "fail";
-          document.getElementById("msg").textContent = "Impossible de charger les composants. Redémarrez le navigateur puis réessayez.";
+          document.getElementById("msg").textContent = "Impossible de charger le moteur. Redémarrez le navigateur et réessayez.";
         };
         document.body.appendChild(s);
       })();

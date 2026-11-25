@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta name="theme-color" content="#ffffff">
-<title>ViralTech Market · Espace Console PS4</title>
+<title>ViralTech Market · PS4 Host</title>
 <style>
 :root{--blue:#1267d5;--blue2:#0b4ca8;--ink:#142b49;--muted:#60748e;--line:#dce8f6;--paper:#fff;--soft:#f3f8ff;--green:#16834b;--red:#b42318}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--paper);color:var(--ink);font:15px/1.5 Arial,Helvetica,sans-serif}
@@ -29,7 +29,7 @@ button:hover{background:var(--blue2)}button:disabled{opacity:.55;cursor:wait}
 #campaignTitle{font-size:clamp(22px,3.4vw,32px);margin:8px 0}
 #campaignText{color:var(--muted);margin:0}
 .dots{display:flex;gap:7px;margin-top:15px}.dot{width:7px;height:7px;border-radius:50%;background:#c7d7eb}.dot.active{width:22px;border-radius:8px;background:var(--blue)}
-#season{margin:0 0 12px;padding:10px 14px;border:1px solid #cfe0f5;border-radius:12px;background:#f2f7ff;color:#174b86;font-size:12px;font-weight:800;letter-spacing:.04em}#host{margin-top:14px}
+#host{margin-top:14px}
 .firmware{display:flex;flex-wrap:wrap;gap:7px;margin:13px 0 18px}
 .firmware span{padding:5px 9px;border:1px solid #d8e6f6;border-radius:6px;background:#f6faff;color:#31577f;font-size:11px;font-weight:bold}
 .options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:15px 0}
@@ -69,7 +69,6 @@ button:hover{background:var(--blue2)}button:disabled{opacity:.55;cursor:wait}
 </section>
 
 <section id="launcher" class="hidden">
- <div id="season" role="status">VIRALTECH MARKET · TECHNOLOGIE, GAMING & SOLUTIONS DIGITALES</div>
  <section class="panel" id="campaign" aria-label="Publicités et présentations ViralTech Market">
   <div class="copy">
    <div class="eyebrow">ViralTech Market · Présentation & offres</div>
@@ -82,16 +81,16 @@ button:hover{background:var(--blue2)}button:disabled{opacity:.55;cursor:wait}
 
  <section class="panel" id="host">
   <div class="inner">
-   <div class="eyebrow">ViralTech Market · Édition console</div>
-   <h2>Préparation de votre console</h2>
-   <p class="lead">Sélectionnez l’environnement à démarrer. La détection du firmware et les profils techniques sont gérés par le moteur intégré.</p>
+   <div class="eyebrow">Environnement PlayStation 4</div>
+   <h2>Lancement du host</h2>
+   <p class="lead">Choisissez le payload à lancer. Les fichiers et offsets du moteur déterminent les firmwares réellement pris en charge.</p>
    <div class="firmware" aria-label="Firmwares annoncés par le moteur">
     <span>12.00</span><span>12.02</span><span>12.50</span><span>12.52</span><span>13.00</span><span>13.02</span><span>13.04</span><span>13.50</span><span>13.52</span><span>14.00</span><span>14.02</span>
    </div>
    <form class="pick" id="pick">
     <div class="options">
-     <label class="opt"><input type="radio" name="payload" value="hen"><span><b>PS4-HEN</b><small>Environnement PS4-HEN intégré</small></span></label>
-     <label class="opt"><input type="radio" name="payload" value="goldhen" checked><span><b>GoldHEN</b><small>Édition présentée par ViralTech Market</small></span></label>
+     <label class="opt"><input type="radio" name="payload" value="hen"><span><b>PS4-HEN</b><small>Enabler fourni par le projet Afterglow</small></span></label>
+     <label class="opt"><input type="radio" name="payload" value="goldhen" checked><span><b>GoldHEN</b><small>Payload GoldHEN · présentation ViralTech Market</small></span></label>
     </div>
     <label class="auto"><input type="checkbox" id="auto"> Lancement automatique après 5 secondes</label>
     <button class="btn" type="submit">Démarrer le host</button>
@@ -103,7 +102,7 @@ button:hover{background:var(--blue2)}button:disabled{opacity:.55;cursor:wait}
  </section>
 </section>
 </main>
-<footer id="footer">VIRALTECH MARKET · +226 05 28 47 06 · +226 72 74 45 95 · assistance@viraltechmarket.com</footer>
+<footer id="footer">ViralTech Market · +226 05 28 47 06 · +226 72 74 45 95 · assistance@viraltechmarket.com</footer>
 <script src="activation-config.js"></script>
 <script>
 (function(){
@@ -133,19 +132,16 @@ form.addEventListener('submit',async function(e){
  }catch(err){msg.textContent=err.message||'Connexion au serveur impossible.'}
  finally{button.disabled=false}
 });
-var existing=record();if(existing)showLauncher();else activation.classList.remove('hidden');
+var existing=record();if(existing)showActivated(existing);else activation.classList.remove('hidden');
 })();
 </script>
 <script src="launch.js"></script>
 <script>
 (function(){
-var season=document.getElementById('season');var now=new Date();var month=now.getMonth()+1,day=now.getDate();if(month===11&&day>=25){season.textContent='VIRALTECH MARKET · OFFRES DE FIN NOVEMBRE';}else if(month===12&&day<=26){season.textContent='VIRALTECH MARKET · ÉDITION SPÉCIALE FÊTES DE FIN D’ANNÉE';}else if((month===12&&day>=27)||(month===1&&day<=15)){season.textContent='VIRALTECH MARKET · NOUVELLE ANNÉE, NOUVELLES SOLUTIONS';}else{season.textContent='VIRALTECH MARKET · TECHNOLOGIE, GAMING & SOLUTIONS DIGITALES';}
 var slides=[
- {title:'Consoles, jeux & accessoires gaming',text:'Vente, réparation, optimisation et accompagnement PlayStation, Xbox, Nintendo et consoles portables. Accessoires, manettes, câbles et solutions gaming.',image:'assets-gaming.jpg'},
- {title:'Gestion commerciale & stocks',text:'Outils de gestion, caisse, inventaire, suivi des ventes et solutions adaptées aux boutiques, commerces et activités professionnelles.',image:'assets-digital.jpg'},
- {title:'Création web & présence numérique',text:'Sites vitrines, plateformes e-commerce, hébergement, noms de domaine, référencement naturel et visibilité sur Google.',image:'assets-hero.jpg'},
- {title:'Marketing digital & automatisation',text:'Gestion de pages, campagnes publicitaires, SMS en masse, automatisation et accompagnement de votre communication.',image:'assets-digital.jpg'},
- {title:'Solutions techniques & fabrication 3D',text:'Tampons 3D personnalisés, outils techniques, solutions LED et accompagnement autour de vos projets technologiques.',image:'assets-hero.jpg'}
+ {title:'Accessoires gaming & consoles',text:'Manettes, connectique, câbles HDMI, charge et accessoires pour accompagner votre expérience de jeu.',image:'assets-gaming.jpg'},
+ {title:'Gestion de stock & outils professionnels',text:'Des solutions de gestion pour suivre les produits, les ventes, les mouvements et les activités de votre entreprise.',image:'assets-digital.jpg'},
+ {title:'Création web & visibilité digitale',text:'Sites vitrines, e-commerce, référencement et accompagnement de votre présence numérique.',image:'assets-hero.jpg'}
 ];
 var i=0,title=document.getElementById('campaignTitle'),copy=document.getElementById('campaignText'),img=document.getElementById('campaignImage'),dots=document.getElementById('campaignDots');
 slides.forEach(function(_,n){var d=document.createElement('span');d.className='dot'+(n===0?' active':'');dots.appendChild(d)});

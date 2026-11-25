@@ -24,7 +24,7 @@
 set -eu
 
 cd "$(dirname "$0")"
-PORT="${VTM_PORT:-${AFTERGLOW_PORT:-8000}}"
+PORT="${AFTERGLOW_PORT:-8000}"
 
 exec python3 - "$PORT" <<'PY'
 import sys
@@ -64,7 +64,7 @@ class Handler(SimpleHTTPRequestHandler):
 
 port = int(sys.argv[1])
 server = ThreadingHTTPServer(("0.0.0.0", port), partial(Handler, directory="."))
-print("ViralTech Market Host disponible sur http://0.0.0.0:%d/  (Ctrl+C pour arrêter)" % port, flush=True)
+print("afterglow on http://0.0.0.0:%d/  (ctrl-c to stop)" % port, flush=True)
 try:
     server.serve_forever()
 except KeyboardInterrupt:

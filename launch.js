@@ -24,7 +24,7 @@ var gone = false;
  *
  * With no route the manifest check does not fail fast -- it sits on a
  * network timeout, measured at 20-30 s on a console, and the page said
- * "Synchronisation du cache…" the whole time. Offline use is a first-class
+ * "waiting for the cache" the whole time. Offline use is a first-class
  * case here, not an edge case: the files are already on disk, and a run
  * from them is exactly as good. So the wait is a courtesy with an upper
  * bound, never a gate. */
@@ -83,10 +83,10 @@ function cacheNote() {
   if (!appCache) { cacheEl.textContent = ""; return; }
   var text = "";
   try {
-    if (appCache.status === appCache.CHECKING) text = "Vérification des mises à jour…";
-    else if (appCache.status === appCache.DOWNLOADING) text = "Chargement des fichiers… patientez.";
+    if (appCache.status === appCache.CHECKING) text = "checking for updates";
+    else if (appCache.status === appCache.DOWNLOADING) text = "loading files - hold on";
     else if (appCache.status === appCache.UPDATEREADY) text = "newer version cached - reloading";
-    else if (appCache.status === appCache.OBSOLETE) text = "Cache local indisponible · accès direct au serveur.";
+    else if (appCache.status === appCache.OBSOLETE) text = "the cache was dropped - the server answers directly";
   } catch (e) {}
   cacheEl.textContent = text;
 }
@@ -165,12 +165,12 @@ function start() {
   /* Not a refusal -- a bounded wait, and offline none at all. */
   if (!offline() && cacheBusy()) {
     waitingForCache = true;
-    countEl.textContent = "Synchronisation du cache…";
+    countEl.textContent = "waiting for the cache";
     cacheNote();
     if (cacheTimer === null) {
       cacheTimer = setTimeout(function () {
         cacheTimer = null;
-        if (!gone) { countEl.textContent = "Le cache ne répond pas · poursuite du démarrage."; go(); }
+        if (!gone) { countEl.textContent = "cache did not answer - going anyway"; go(); }
       }, CACHE_WAIT_MS);
     }
     return;
@@ -199,14 +199,14 @@ function stopClock() {
 
 function startClock() {
   var left = AUTOSTART_SECONDS;
-  countEl.textContent = "Démarrage dans " + left + " s";
+  countEl.textContent = "starting in " + left + "s";
   ticker = setInterval(function () {
     left -= 1;
     if (left <= 0) {
       start();
       return;
     }
-    countEl.textContent = "Démarrage dans " + left + " s";
+    countEl.textContent = "starting in " + left + "s";
   }, 1000);
 }
 

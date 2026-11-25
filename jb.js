@@ -943,7 +943,7 @@ let mainMf = null,
       // afterwards -- afterglow IS the kernel stage, not a prelude to one.
       return;
     }
-    mark("JB-END", "ViralTech Market · étape noyau initialisée");
+    mark("JB-END", "afterglow is the kernel stage -- without afterglow= nothing runs here");
     try { if (mainArmed && mainMf && mainOrig && p) { p.write8(mainMf, mainOrig); mainArmed = false; } } catch (e) {}
     try { finishUI(false); } catch (e) {}
   } catch (eOuter) {

@@ -1934,7 +1934,7 @@ async function attempt(ctx, opts) {
   STATE.ctx = ctx;
   opts = opts || {};
   STATE.retry = false;
-  say("ViralTech Market -- initialisation du système PS4, firmware " + FW_KEY);
+  say("afterglow -- ps4 kernel exploit, firmware " + FW_KEY + " (raw13 host)");
 
   const missing = seedStubs();
   if (missing.length) {
