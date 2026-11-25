@@ -1,21 +1,10 @@
-# ViralTech Market — raw13g personnalisé
+VIRALTECH MARKET — ÉDITION CONSOLE PS4
 
-## Modifications appliquées
-- Remplacement du branding visible « RAW GAME » par ViralTech Market.
-- Ajout d'un logo SVG local `viraltech-logo.svg`.
-- Ajout d'un écran de présentation temporaire avec les tarifs et contacts fournis.
-- Ajout d'un écran d'activation après la présentation.
-- La page `jb.html` vérifie également l'activation avant de charger `jb.js`, afin d'éviter un accès direct accidentel à la page d'exécution.
-- Mise à jour de `cache.appcache` et de la version de l'entrée `jb.js?v=20`.
-- Les fichiers d'exploit, les tables d'offsets et les payloads binaires d'origine n'ont pas été modifiés.
+Interface et présentation entièrement habillées aux couleurs de ViralTech Market.
+Firmwares présents : 12.00, 12.02, 12.50, 12.52, 13.00, 13.02, 13.04, 13.50, 13.52, 14.00 et 14.02.
+Payloads fournis : GoldHEN et PS4-HEN.
+Activation : endpoint d’origine conservé ; après la première activation, le même navigateur retourne directement au lanceur grâce à son enregistrement local.
 
-## Règle d'activation actuelle
-Le code local doit comporter 10 chiffres, commencer par `26` et avoir une somme de chiffres divisible par 7.
+IMPORTANT : les profils firmware ne possèdent pas tous le même statut de validation dans les documents techniques d’origine. Voir docs/TECHNICAL-SOURCE.md et docs/README-SOURCE-AFTERGLOW.md. Les binaires, offsets et patchsets n’ont pas été modifiés dans cette refonte de présentation. Aucun test sur console physique n’a été effectué dans cet environnement.
 
-**Limite importante :** cette règle et le drapeau `localStorage` sont entièrement côté navigateur. Ils peuvent être inspectés, contournés ou effacés par un utilisateur qui contrôle la console. Ce n'est pas une licence sécurisée ni une protection contre la copie. Une vraie validation exige un service de licence distant ou une autre architecture de confiance.
-
-## À propos de la stabilité
-Les fichiers `core.js`, `jb.js`, `mem.js`, `int64.js`, `ps4_offsets.js`, `rpc_worker.js`, `goldhen.bin`, `payload2.bin` et les patchs binaires sont conservés tels quels. Le verrou est placé avant le chargement du module de l'exploit, sans modifier la chaîne d'exploitation elle-même. Cela réduit le risque de casser cette chaîne, mais ne garantit pas l'absence de Kernel Panic : l'exécution d'un exploit reste intrinsèquement risquée et dépend du firmware et de l'état de la console.
-
-## Déploiement
-Téléverser le contenu du dossier `raw13g.github.io-main` dans la racine du dépôt GitHub Pages en conservant l'arborescence. Le manifeste AppCache est obsolète dans les navigateurs modernes, mais a été conservé pour rester cohérent avec le projet original ciblant le navigateur PS4.
+Les licences, crédits et notices d’origine sont conservés dans l’archive.
