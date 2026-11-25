@@ -1,210 +1,65 @@
 <!doctype html>
 <html lang="fr" manifest="cache.appcache">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#17161c">
-<meta name="description" content="ViralTech Market — environnement gaming, installation, configuration et assistance technique.">
-<link rel="canonical" href="https://vtm27g.github.io/">
-<title>ViralTech Market | PS4 Host</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#ffffff"><meta name="description" content="ViralTech Market — technologie, gaming, gestion, création web et visibilité digitale.">
+<link rel="canonical" href="https://vtm27g.github.io/"><title>ViralTech Market — Technologie & Solutions digitales</title>
 <style>
-:root{--bg:#17161c;--panel:#211f25;--gold:#ffd84d;--muted:#bdb7a8;--line:#51472b;--green:#9fe2b1;--red:#ff9387}
-*{box-sizing:border-box}
-html,body{margin:0;min-height:100%;background:radial-gradient(ellipse at 50% 0%,#39301b 0%,var(--bg) 58%,#0c0c10 100%);color:#f5f2e8;font:15px/1.5 Arial,Helvetica,sans-serif}
-body{min-height:100vh}
-#brand{display:flex;align-items:center;justify-content:center;gap:10px;padding:13px;background:#101014ee;border-bottom:1px solid var(--line)}
-#brand img{width:38px;height:38px;object-fit:contain}
-#brand b{font-size:16px;letter-spacing:.14em;color:var(--gold)}
-#wrap{max-width:1040px;margin:auto;padding:22px 18px 36px}
-.hidden{display:none!important}
-.panel{width:100%;max-width:850px;margin:22px auto;padding:clamp(20px,4vw,36px);text-align:center;border:1px solid #75622d;border-radius:20px;background:linear-gradient(145deg,#29251d,#151419);box-shadow:0 20px 70px #0009}
-.eyebrow{font-size:11px;letter-spacing:.23em;text-transform:uppercase;color:var(--gold);font-weight:800}
-h1,h2{font-size:clamp(25px,4.5vw,42px);line-height:1.1;margin:12px 0}
-.lead{max-width:690px;margin:0 auto 20px;color:#d6d0c3}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:22px 0}
-.tile{padding:16px 12px;border:1px solid #51472b;border-radius:13px;background:#08080a55}
-.symbol{font-size:27px;display:block;margin-bottom:7px}
-.tile b{display:block}
-.tile strong{display:block;color:var(--gold);font-size:clamp(17px,2.5vw,24px);margin-top:5px}
-.tile small{display:block;color:#aaa394;margin-top:5px}
-.contact{font-size:13px;line-height:1.9;overflow-wrap:anywhere}
-.contact a{color:var(--gold);text-decoration:none}
-.actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px}
-button,.btn{padding:13px 22px;border:1px solid #e5bd37;border-radius:11px;background:var(--gold);color:#17150d;font-weight:800;font-size:15px;cursor:pointer;text-decoration:none}
-button:hover,.btn:hover{background:#ffeb98}
-.secondary{background:transparent;color:var(--gold)}
-#inputCode{display:block;width:min(340px,100%);height:50px;margin:18px auto 10px;padding:10px;font-size:21px;text-align:center;border-radius:10px;border:2px solid var(--gold);background:#0007;color:#fff;letter-spacing:.12em}
-#licenseMessage{min-height:24px;margin-top:12px;color:var(--red);font-size:13px}
-.contactline{font-size:12px;color:#a8a294;margin-top:14px}
-#pick{margin:22px auto 0;max-width:620px}
-.options{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:16px 0}
-.option{display:flex;align-items:center;gap:8px;padding:12px 16px;border:1px solid var(--line);border-radius:12px;background:#09090c66;cursor:pointer}
-.option input{accent-color:var(--gold);width:18px;height:18px}
-#count,#cache{min-height:20px;color:var(--muted);font-size:12px;margin:8px 0}
-.note{max-width:760px;margin:18px auto 0;color:#aaa394;font-size:12px}
-#promo{position:fixed;z-index:1000;inset:0;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(9,9,12,.97);overflow:auto}
-#promo .panel{margin:auto}
-#promoTimer{height:4px;background:#403b30;border-radius:5px;overflow:hidden;max-width:420px;margin:20px auto 0}
-#promoTimer span{display:block;height:100%;width:0;background:var(--gold);animation:fill 4.5s linear forwards}
-@keyframes fill{to{width:100%}}
-#status{text-align:center;color:var(--muted);font-size:12px;margin-top:10px}
-@media(max-width:600px){#wrap{padding:12px}.grid{grid-template-columns:1fr;gap:8px}.tile{padding:13px}.panel{padding:22px 14px}#brand b{font-size:14px}}
-</style>
-</head>
+:root{--blue:#1267d5;--blue2:#0b4ca8;--sky:#eaf3ff;--ink:#13243a;--muted:#62738a;--line:#dce7f4;--paper:#fff;--soft:#f5f9ff;--green:#16834b;--red:#b42318;--shadow:0 16px 44px rgba(20,67,125,.10)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.58 Arial,Helvetica,sans-serif}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}.hidden{display:none!important}.container{width:min(1160px,calc(100% - 36px));margin:auto}
+.topline{background:#0d3975;color:#fff;text-align:center;padding:7px 12px;font-size:12px;letter-spacing:.03em}.topline strong{color:#dcecff}.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;gap:10px;min-width:205px}.brand img{width:45px;height:45px}.brand strong{display:block;color:#114d9f;letter-spacing:.09em;font-size:15px}.brand small{display:block;color:#718198;font-size:10px;letter-spacing:.14em}.navlinks{display:flex;gap:23px;align-items:center;color:#344861;font-size:13px;font-weight:bold}.navlinks a:hover{color:var(--blue)}.navcta,.primary{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--blue);color:#fff;border:0;border-radius:9px;padding:12px 18px;font-weight:bold;box-shadow:0 7px 18px #1267d526}.navcta:hover,.primary:hover{background:var(--blue2)}
+.season{padding:10px 16px;text-align:center;background:linear-gradient(90deg,#e9f3ff,#f8fbff,#e9f3ff);color:#164f99;font-size:12px;font-weight:bold;border-bottom:1px solid #d7e8ff}.season.blackfriday{background:linear-gradient(90deg,#101827,#1b3762,#101827);color:#fff}.season.christmas{background:linear-gradient(90deg,#eaf8ef,#fff,#eaf8ef);color:#176b42}.season.newyear{background:linear-gradient(90deg,#edf2ff,#fff,#edf2ff);color:#244f9b}
+.hero{padding:42px 0 48px;background:linear-gradient(120deg,#f8fbff 0%,#fff 48%,#eef5ff 100%);overflow:hidden}.heroGrid{display:grid;grid-template-columns:1fr 1.08fr;align-items:center;gap:34px}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.17em;font-weight:800;color:var(--blue)}h1{font-size:clamp(34px,4.8vw,57px);line-height:1.04;letter-spacing:-.04em;margin:15px 0 18px;color:#102d52}.heroText{font-size:17px;max-width:550px;color:#526780}.heroActions{display:flex;flex-wrap:wrap;gap:12px;margin:25px 0}.outline{display:inline-flex;align-items:center;justify-content:center;border:1px solid #b8cce5;color:#174e91;border-radius:9px;padding:11px 17px;font-weight:bold;background:#fff}.trust{display:flex;gap:18px;flex-wrap:wrap;color:#5f7188;font-size:12px}.trust span:before{content:'✓';color:#16834b;font-weight:bold;margin-right:6px}.heroVisual{position:relative}.heroVisual img{width:100%;display:block;border-radius:20px;box-shadow:0 24px 55px rgba(20,67,125,.18);object-fit:cover;aspect-ratio:1.78}.heroVisual:after{content:'VIRALTECH MARKET';position:absolute;right:16px;bottom:14px;background:#fffE;color:#1654a0;border:1px solid #d6e5f8;border-radius:7px;padding:7px 10px;font-size:9px;font-weight:900;letter-spacing:.14em}
+.section{padding:64px 0}.section.alt{background:var(--soft)}.sectionHead{max-width:720px;margin-bottom:28px}.sectionHead h2{font-size:clamp(26px,3vw,38px);line-height:1.15;letter-spacing:-.025em;margin:9px 0;color:#12335d}.sectionHead p{color:var(--muted);margin:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.service{border:1px solid var(--line);border-radius:15px;background:#fff;overflow:hidden;box-shadow:0 5px 18px #1a47700a;transition:transform .2s,box-shadow .2s}.service:hover{transform:translateY(-3px);box-shadow:var(--shadow)}.service img{width:100%;height:170px;object-fit:cover;display:block;background:#eaf3ff}.serviceBody{padding:18px}.service h3{font-size:17px;margin:0 0 8px;color:#143d70}.service p{margin:0;color:#65768c;font-size:13px}.service .tag{display:inline-block;margin-top:13px;color:#145ab6;font-size:11px;font-weight:bold;letter-spacing:.05em}.iconCard{padding:23px;border:1px solid var(--line);border-radius:14px;background:#fff;min-height:160px}.iconCard .ico{width:42px;height:42px;border-radius:12px;background:#e9f3ff;color:#1267d5;display:grid;place-items:center;font-size:21px;margin-bottom:12px}.iconCard h3{font-size:16px;margin:0 0 6px}.iconCard p{font-size:13px;color:var(--muted);margin:0}.twoCol{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center}.featureImage{width:100%;border-radius:18px;box-shadow:var(--shadow)}.checklist{padding:0;list-style:none}.checklist li{margin:11px 0;color:#53677f}.checklist li:before{content:'✓';color:#16834b;font-weight:bold;margin-right:10px}.band{background:linear-gradient(110deg,#0d4fa8,#1676e6);color:#fff;padding:36px 0}.bandInner{display:flex;justify-content:space-between;align-items:center;gap:24px}.band h2{font-size:27px;margin:0 0 5px}.band p{margin:0;color:#dbeaff;font-size:14px}.band .outline{border:0;color:#1354a4}.footer{background:#0f2745;color:#e8f2ff;padding:38px 0 20px}.footerGrid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:28px}.footer h3{font-size:14px;margin:0 0 12px}.footer p,.footer a{font-size:12px;color:#c3d4e9}.footer a{display:block;margin:7px 0}.copyright{border-top:1px solid #ffffff24;margin-top:26px;padding-top:16px;font-size:11px;color:#b7c9df}
+/* activation */.overlay{position:fixed;z-index:1000;inset:0;background:rgba(11,31,57,.66);display:flex;align-items:center;justify-content:center;padding:18px;overflow:auto}.dialog{width:min(510px,100%);background:#fff;border:1px solid #d9e7f7;border-radius:18px;padding:30px;box-shadow:0 28px 90px #071b3580;text-align:center}.dialog img{width:62px;height:62px;object-fit:contain}.dialog h2{font-size:26px;line-height:1.15;margin:12px 0;color:#153d70}.dialog p{color:#63758b;font-size:13px}.dialog .eyebrow{margin-top:8px}.inputCode{width:min(330px,100%);height:52px;border:1.5px solid #aac8ee;border-radius:9px;text-align:center;font-size:21px;letter-spacing:.15em;color:#12335d;margin:12px auto;display:block}.message{min-height:24px;font-size:13px;color:var(--red);margin:9px 0}.message.success{color:var(--green)}.statusPill{display:inline-flex;align-items:center;gap:7px;background:#e8f7ef;color:#167447;padding:7px 11px;border-radius:30px;font-size:11px;font-weight:bold}.statusPill:before{content:'';width:7px;height:7px;border-radius:50%;background:#1caa65}.activationMeta{font-size:11px!important;color:#8090a4!important}.catalogueIntro{margin:0 0 18px;color:#61758d;font-size:13px}.hostBtn{margin-top:20px;min-width:220px}.dateLabel{font-size:11px;color:#71839a;margin-top:12px}
+@media(max-width:850px){.navlinks{display:none}.heroGrid,.twoCol{grid-template-columns:1fr}.heroVisual{order:-1}.hero{padding-top:25px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.footerGrid{grid-template-columns:1fr 1fr}.bandInner{align-items:flex-start;flex-direction:column}}
+@media(max-width:560px){.container{width:calc(100% - 26px)}.nav{height:64px}.brand img{width:38px;height:38px}.brand strong{font-size:13px}.navcta{font-size:11px;padding:10px}.hero{padding:18px 0 30px}.heroVisual img{aspect-ratio:1.35;border-radius:13px}h1{font-size:35px}.heroText{font-size:14px}.section{padding:43px 0}.grid{grid-template-columns:1fr;gap:12px}.service img{height:190px}.iconCard{min-height:0}.footerGrid{grid-template-columns:1fr}.dialog{padding:23px 17px}.trust{gap:9px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style></head>
 <body>
-<header id="brand"><img src="viraltech-logo.svg" alt="ViralTech Market"><b>VIRALTECH MARKET</b></header>
-
-<section id="promo" role="dialog" aria-label="Présentation ViralTech Market">
-  <div class="panel">
-    <div class="eyebrow">Technologie · Gaming · Assistance</div>
-    <h1>Bienvenue chez ViralTech Market</h1>
-    <p class="lead">Votre espace dédié aux services gaming : installation, configuration, optimisation, accessoires et assistance technique selon la compatibilité de votre console.</p>
-    <div class="grid">
-      <div class="tile"><span class="symbol">🎮</span><b>PlayStation 3</b><strong>1 000 F CFA</strong><small>par jeu · selon compatibilité</small></div>
-      <div class="tile"><span class="symbol">⚡</span><b>PlayStation 4</b><strong>2 000 F CFA</strong><small>par jeu · selon compatibilité</small></div>
-      <div class="tile"><span class="symbol">🚀</span><b>PlayStation 5</b><strong>5 000 F CFA</strong><small>par jeu · selon compatibilité</small></div>
-    </div>
-    <div class="contact">Assistance : <b>+226 05 28 47 06</b> · <b>+226 72 74 45 95</b><br><a href="mailto:assistance@viraltechmarket.com">assistance@viraltechmarket.com</a></div>
-    <div id="promoTimer"><span></span></div>
-    <div class="actions"><button type="button" id="skipPromo">Continuer</button></div>
-    <p class="note">Les tarifs et services sont soumis à la compatibilité du matériel et aux conditions de prestation.</p>
-  </div>
-</section>
-
-<main id="wrap">
-  <section id="activationBox" class="panel hidden" role="dialog" aria-label="Activation de l’accès">
-    <div class="eyebrow">Accès client · Activation unique</div>
-    <h2>Activer votre accès</h2>
-    <p class="lead">La première activation nécessite une connexion Internet. Une fois validé, l’accès est conservé sur ce navigateur pour les utilisations suivantes.</p>
-    <form id="activationForm">
-      <input id="inputCode" inputmode="numeric" autocomplete="off" maxlength="10" pattern="[0-9]{10}" placeholder="Code à 10 chiffres" aria-label="Code d’accès à 10 chiffres" required>
-      <button type="submit">Valider l’activation</button>
-    </form>
-    <div id="licenseMessage" aria-live="polite"></div>
-    <div class="contactline">Besoin d’aide ? +226 05 28 47 06 · +226 72 74 45 95</div>
-  </section>
-
-  <section id="menu" class="panel hidden">
-    <div class="eyebrow">VTM27 · Environnement gaming</div>
-    <h2>Préparez votre expérience de jeu</h2>
-    <p class="lead">Choisissez le système d’enabler à lancer. Le moteur vérifie lui-même le firmware et refuse les versions pour lesquelles il ne possède pas de profil technique.</p>
-    <div class="grid">
-      <div class="tile"><span class="symbol">🕹️</span><b>GoldHEN</b><small>Enabler GoldHEN fourni dans cette version</small></div>
-      <div class="tile"><span class="symbol">🎮</span><b>PS4-HEN</b><small>En attente de vérification du binaire avant activation</small></div>
-      <div class="tile"><span class="symbol">🛠️</span><b>Assistance</b><small>Configuration et accompagnement ViralTech Market</small></div>
-    </div>
-    <form id="pick">
-      <div class="options">
-        <label class="option"><input type="radio" name="payload" value="hen" disabled><span>PS4-HEN · désactivé en attente de vérification du binaire</span></label>
-        <label class="option"><input type="radio" name="payload" value="goldhen" checked><span>GoldHEN</span></label>
-      </div>
-      <label class="option"><input type="checkbox" id="auto"><span>Lancement automatique après 5 secondes</span></label>
-      <div class="actions"><button class="btn" type="submit">Lancer le host</button></div>
-      <p id="count" aria-live="polite"></p>
-      <p id="cache" aria-live="polite"></p>
-    </form>
-    <div class="contact">Commandes et renseignements : <b>+226 05 28 47 06</b> · <b>+226 72 74 45 95</b><br><a href="mailto:assistance@viraltechmarket.com">assistance@viraltechmarket.com</a></div>
-    <p class="note">Ne lancez pas l’opération pendant une sauvegarde ou une activité importante. Un exploit système peut échouer et provoquer un redémarrage de la console. Ne coupez pas l’alimentation pendant l’exécution.</p>
-  </section>
-  <div id="status" aria-live="polite"></div>
+<div class="topline">ViralTech Market · Solutions technologiques, gaming et digitales · Burkina Faso <span id="localDate"></span></div>
+<header class="header"><div class="container nav"><a class="brand" href="#accueil"><img src="viraltech-logo.svg" alt="Logo ViralTech Market"><span><strong>VIRALTECH MARKET</strong><small>TECHNOLOGIE & SOLUTIONS</small></span></a><nav class="navlinks"><a href="#services">Nos services</a><a href="#gestion">Gestion & logiciels</a><a href="#web">Web & visibilité</a><a href="#gaming">Gaming</a><a href="#contact">Contact</a></nav><a class="navcta" href="#contact">Nous contacter</a></div></header>
+<div id="seasonBanner" class="season" aria-live="polite">Des solutions adaptées à vos projets.</div>
+<main>
+<section class="hero" id="accueil"><div class="container heroGrid"><div><div class="eyebrow" id="heroEyebrow">Votre partenaire technologique</div><h1>La technologie qui fait avancer vos projets.</h1><p class="heroText">Gaming, équipements, logiciels de gestion, création web et visibilité digitale : ViralTech Market rassemble des solutions concrètes pour les particuliers, les professionnels et les entreprises.</p><div class="heroActions"><a class="primary" href="#services">Découvrir nos solutions <span>→</span></a><a class="outline" href="https://wa.me/22605284706" target="_blank" rel="noopener">Parler à un conseiller</a></div><div class="trust"><span>Accompagnement technique</span><span>Solutions personnalisées</span><span>Assistance</span></div></div><div class="heroVisual"><img src="assets-hero.jpg" alt="Équipements gaming, consoles et outils numériques dans un environnement technologique blanc et bleu"></div></div></section>
+<section class="section" id="services"><div class="container"><div class="sectionHead"><div class="eyebrow">Nos univers</div><h2>Un partenaire pour vos besoins technologiques.</h2><p>Découvrez les domaines dans lesquels ViralTech Market intervient. Chaque prestation est étudiée selon votre matériel, votre activité et vos objectifs.</p></div><div class="grid">
+<article class="service" id="gaming"><img src="assets-gaming.jpg" alt="Consoles et accessoires gaming"><div class="serviceBody"><h3>Consoles & univers gaming</h3><p>Services sur consoles PlayStation, Xbox, Nintendo, PSP et PS Vita : installation, configuration, optimisation, assistance, réparation et vente selon disponibilité et compatibilité.</p><span class="tag">GAMING · CONSOLES · ASSISTANCE</span></div></article>
+<article class="service"><img src="assets-digital.jpg" alt="Tableau de bord numérique et outils de gestion"><div class="serviceBody"><h3>Gestion de stock & logiciels</h3><p>Mise en place et maintenance de gestionnaires de stock, ventes, caisse, inventaire et solutions métiers adaptées aux commerces et organisations.</p><span class="tag">GESTION · STOCK · AUTOMATISATION</span></div></article>
+<article class="service" id="web"><img src="assets-digital.jpg" alt="Interface numérique de site et tableau de bord"><div class="serviceBody"><h3>Création de sites Web</h3><p>Sites vitrines, plateformes professionnelles, boutiques e-commerce, hébergement, noms de domaine et bases de données.</p><span class="tag">WEB · E-COMMERCE · HÉBERGEMENT</span></div></article>
+<article class="service"><div class="serviceBody"><h3>Référencement & visibilité</h3><p>Optimisation SEO, présence Google, fiches d'établissement, structuration des contenus et accompagnement de la visibilité en ligne.</p><span class="tag">SEO · GOOGLE · VISIBILITÉ</span></div></article>
+<article class="service"><div class="serviceBody"><h3>Marketing digital & communication</h3><p>Gestion de pages, campagnes publicitaires, publicité Google et Meta, SMS en masse et accompagnement de communication digitale.</p><span class="tag">PUBLICITÉ · SMS · RÉSEAUX SOCIAUX</span></div></article>
+<article class="service"><div class="serviceBody"><h3>Création 3D & équipements</h3><p>Conception et impression de tampons 3D, notamment pour savon, outils de bureau, accessoires et solutions LED/luminaires : vente, installation et maintenance.</p><span class="tag">3D · IMPRESSION · LED</span></div></article>
+</div></div></section>
+<section class="section alt" id="gestion"><div class="container twoCol"><div><div class="eyebrow">Pilotage d'activité</div><h2>Vos opérations mieux organisées, vos décisions mieux éclairées.</h2><p class="heroText" style="font-size:15px">Des outils de gestion conçus pour rendre le suivi quotidien plus clair : produits, entrées et sorties, ventes, inventaires, alertes de stock, utilisateurs et historique.</p><ul class="checklist"><li>Gestion des produits, catégories et tarifs</li><li>Suivi des stocks et alertes de réapprovisionnement</li><li>Ventes, caisse, utilisateurs et historique</li><li>Solutions adaptées à différents secteurs d'activité</li><li>Installation, configuration, formation et maintenance</li></ul><a class="primary" href="https://wa.me/22605284706" target="_blank" rel="noopener">Présenter mon besoin</a></div><img class="featureImage" src="assets-digital.jpg" alt="Tableau de bord de gestion et analyse des données"></div></section>
+<section class="section" id="digital"><div class="container"><div class="sectionHead"><div class="eyebrow">Services numériques</div><h2>Du site Web à l'automatisation.</h2><p>Nous accompagnons la mise en place et l'évolution de vos outils numériques, de la présence en ligne à l'organisation des opérations.</p></div><div class="grid"><div class="iconCard"><div class="ico">⌘</div><h3>Sites & plateformes</h3><p>Création, refonte, maintenance, e-commerce et sites vitrines professionnels.</p></div><div class="iconCard"><div class="ico">⌕</div><h3>SEO & présence Google</h3><p>Structure technique, contenus, référencement et visibilité locale.</p></div><div class="iconCard"><div class="ico">▤</div><h3>Hébergement & domaines</h3><p>Hébergement Web, domaines, bases de données et espaces de stockage.</p></div><div class="iconCard"><div class="ico">↗</div><h3>Analyse de données</h3><p>Organisation, lecture et exploitation des données pour mieux piloter l'activité.</p></div><div class="iconCard"><div class="ico">⚙</div><h3>Automatisation</h3><p>Automatisation de tâches et interconnexion de processus numériques.</p></div><div class="iconCard"><div class="ico">✉</div><h3>Communication digitale</h3><p>Gestion de pages, campagnes publicitaires et diffusion de SMS en masse.</p></div></div></div></section>
+<section class="band"><div class="container bandInner"><div><h2>Un projet ? Parlons de la solution adaptée.</h2><p>Expliquez votre besoin : nous vous orientons vers une prestation appropriée.</p></div><a class="outline" href="https://wa.me/22605284706" target="_blank" rel="noopener">Contacter ViralTech Market</a></div></section>
 </main>
+<footer class="footer" id="contact"><div class="container"><div class="footerGrid"><div><h3>VIRALTECH MARKET</h3><p>Entreprise technologique intervenant dans le gaming, les équipements, les solutions numériques et l'accompagnement technique.</p></div><div><h3>Nos contacts</h3><a href="tel:+22605284706">+226 05 28 47 06</a><a href="tel:+22672744595">+226 72 74 45 95</a><a href="mailto:assistance@viraltechmarket.com">assistance@viraltechmarket.com</a></div><div><h3>Nos domaines</h3><a href="#gaming">Gaming & accessoires</a><a href="#gestion">Gestion & logiciels</a><a href="#web">Sites Web & e-commerce</a><a href="#digital">SEO & marketing digital</a></div></div><div class="copyright">© <span id="yearNow">2026</span> ViralTech Market. Tous droits réservés. · Les prestations sont réalisées selon étude du besoin, disponibilité et compatibilité.</div></div></footer>
 
+<!-- Activation: même format de licence et même clé V1 que le projet fourni. -->
+<div id="activationOverlay" class="overlay hidden" role="dialog" aria-modal="true" aria-label="Activation de la licence"><section class="dialog"><img src="viraltech-logo.svg" alt="ViralTech Market"><div class="eyebrow">Accès client sécurisé</div><h2>Activez votre accès ViralTech</h2><p>La première activation nécessite une connexion Internet. Une fois validée, votre accès est conservé sur ce navigateur pour les prochaines utilisations.</p><form id="activationForm"><input class="inputCode" id="inputCode" inputmode="numeric" autocomplete="off" maxlength="10" pattern="[0-9]{10}" placeholder="Code à 10 chiffres" aria-label="Code d'accès à 10 chiffres" required><button class="primary" type="submit" id="activateButton">Valider ma licence</button></form><div id="licenseMessage" class="message" aria-live="polite"></div><p class="activationMeta">Assistance : +226 05 28 47 06 · +226 72 74 45 95</p></section></div>
+<div id="activatedOverlay" class="overlay hidden" role="dialog" aria-modal="true" aria-label="Licence activée"><section class="dialog"><img src="viraltech-logo.svg" alt="ViralTech Market"><div class="statusPill">LICENCE ACTIVÉE</div><h2>Votre accès est prêt.</h2><p>Votre licence a été validée et enregistrée sur ce navigateur. Vous n'avez pas à saisir de nouveau le code lors de vos prochaines visites sur cet appareil.</p><p class="activationMeta" id="activationDate"></p><button class="primary hostBtn" id="enterSpace" type="button">Accéder à mon espace console →</button><div style="margin-top:12px"><button class="outline" id="browseCatalogue" type="button">Découvrir le catalogue</button></div><div class="dateLabel">Votre accès reste enregistré sur cet appareil.</div></section></div>
 <script src="activation-config.js"></script>
 <script>
-(function(){
-  'use strict';
-  var KEY='vtm27_activation_v2', OLD_KEY='vtm27_activation_v1', DEVICE='vtm27_device_id_v1';
-  var promo=document.getElementById('promo'), skip=document.getElementById('skipPromo');
-  var activation=document.getElementById('activationBox'), menu=document.getElementById('menu');
-  var form=document.getElementById('activationForm'), input=document.getElementById('inputCode');
-  var message=document.getElementById('licenseMessage'), status=document.getElementById('status');
-  var timer=null, shown=false;
-
-  function readRecord(){
-    try {
-      var current=JSON.parse(localStorage.getItem(KEY)||'null');
-      if(current && current.activated===true && current.deviceId) return current;
-      var old=JSON.parse(localStorage.getItem(OLD_KEY)||'null');
-      if(old && old.activated===true && old.deviceId){
-        var migrated={activated:true,deviceId:old.deviceId,licenseId:old.licenseId||null,activatedAt:old.activatedAt||Date.now()};
-        localStorage.setItem(KEY,JSON.stringify(migrated));
-        return migrated;
-      }
-    } catch(e){}
-    return null;
-  }
-  function makeDeviceId(){
-    var id=localStorage.getItem(DEVICE);
-    if(!id){
-      var bytes=new Uint8Array(24);
-      if(window.crypto && crypto.getRandomValues) crypto.getRandomValues(bytes);
-      else for(var i=0;i<bytes.length;i++) bytes[i]=Math.floor(Math.random()*256);
-      id=Array.prototype.map.call(bytes,function(n){return n.toString(16).padStart(2,'0')}).join('');
-      localStorage.setItem(DEVICE,id);
-    }
-    return id;
-  }
-  function showMenu(){
-    if(shown) return;
-    shown=true;
-    if(timer) clearTimeout(timer);
-    promo.classList.add('hidden');
-    activation.classList.add('hidden');
-    menu.classList.remove('hidden');
-    status.textContent='Accès prêt · choisissez votre enabler';
-  }
-  function showActivation(){
-    if(timer) clearTimeout(timer);
-    promo.classList.add('hidden');
-    activation.classList.remove('hidden');
-    try{input.focus()}catch(e){}
-  }
-  function enter(){
-    if(readRecord()) showMenu();
-    else showActivation();
-  }
-  skip.addEventListener('click',enter);
-  timer=setTimeout(enter,4500);
-
-  form.addEventListener('submit',async function(e){
-    e.preventDefault();
-    var code=(input.value||'').replace(/\s/g,'');
-    if(!/^[0-9]{10}$/.test(code)){message.textContent='Le code doit contenir exactement 10 chiffres.';return;}
-    var endpoint=(window.VTM_CONFIG&&window.VTM_CONFIG.activationEndpoint)||'';
-    if(!endpoint){message.textContent='Le service d’activation n’est pas configuré.';return;}
-    var deviceId;
-    try{deviceId=makeDeviceId()}catch(err){message.textContent='Le stockage local est indisponible.';return;}
-    message.style.color='';
-    message.textContent='Vérification sécurisée du code…';
-    var submit=form.querySelector('button[type="submit"]');
-    submit.disabled=true;
-    try{
-      var response=await fetch(endpoint,{
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({code:code,deviceId:deviceId}),
-        cache:'no-store'
-      });
-      var data;
-      try{data=await response.json()}catch(parseError){throw new Error('Réponse invalide du serveur d’activation.');}
-      if(!response.ok || !data || data.activated!==true){
-        message.textContent=(data&&data.message)||'Code invalide ou déjà utilisé.';
-        return;
-      }
-      var record={activated:true,deviceId:deviceId,licenseId:data.licenseId||null,activatedAt:Date.now()};
-      localStorage.setItem(KEY,JSON.stringify(record));
-      if(!readRecord()) throw new Error('Impossible de conserver l’activation dans ce navigateur.');
-      message.style.color='var(--green)';
-      message.textContent='Activation enregistrée. Vous pourrez réutiliser cet accès sur ce navigateur.';
-      setTimeout(showMenu,650);
-    }catch(err){
-      message.textContent=err&&err.message?err.message:'Connexion au service impossible. Réessayez avec Internet.';
-    }finally{
-      submit.disabled=false;
-    }
-  });
+(function(){'use strict';
+var KEY='vtm27_activation_v1',DEVICE='vtm27_device_id_v1';
+var activation=document.getElementById('activationOverlay'),activated=document.getElementById('activatedOverlay'),form=document.getElementById('activationForm'),input=document.getElementById('inputCode'),message=document.getElementById('licenseMessage'),button=document.getElementById('activateButton');
+function getSaved(){try{var r=JSON.parse(localStorage.getItem(KEY)||'null');return r&&r.activated===true&&r.code&&r.deviceId?r:null}catch(e){return null}}
+function randomId(){var a=new Uint8Array(24);if(window.crypto&&crypto.getRandomValues)crypto.getRandomValues(a);else for(var i=0;i<a.length;i++)a[i]=Math.floor(Math.random()*256);return Array.prototype.map.call(a,function(n){return n.toString(16).padStart(2,'0')}).join('')}
+function deviceId(){var id=localStorage.getItem(DEVICE);if(!id){id=randomId();localStorage.setItem(DEVICE,id)}return id}
+function showActivated(record){activation.classList.add('hidden');activated.classList.remove('hidden');var d=record&&record.activatedAt?new Date(record.activatedAt):null;document.getElementById('activationDate').textContent=d&&!isNaN(d.getTime())?'Activation enregistrée le '+d.toLocaleDateString('fr-FR')+' à '+d.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'}):'Accès enregistré sur cet appareil.'}
+function showActivation(){activation.classList.remove('hidden');activated.classList.add('hidden')}
+var saved=getSaved();if(saved){showActivated(saved)}else{showActivation()}
+form.addEventListener('submit',async function(e){e.preventDefault();var code=(input.value||'').replace(/\s/g,'');if(!/^\d{10}$/.test(code)){message.textContent='Le code doit contenir exactement 10 chiffres.';return}var endpoint=(window.VTM_CONFIG&&window.VTM_CONFIG.activationEndpoint)||'';if(!endpoint){message.textContent='Le service d’activation n’est pas configuré.';return}var id;try{id=deviceId()}catch(err){message.textContent='Le stockage local est indisponible.';return}message.className='message';message.textContent='Vérification sécurisée de votre licence…';button.disabled=true;try{var response=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:code,deviceId:id}),cache:'no-store'});var data;try{data=await response.json()}catch(parseError){throw new Error('Réponse invalide du service d’activation.')}if(!response.ok||!data||data.activated!==true){message.textContent=(data&&data.message)||'Code invalide ou déjà utilisé.';return}var record={activated:true,code:code,deviceId:id,activatedAt:Date.now(),licenseId:data.licenseId||null};localStorage.setItem(KEY,JSON.stringify(record));if(!getSaved())throw new Error('Impossible de conserver la licence dans ce navigateur.');message.className='message success';message.textContent='Licence activée avec succès. Votre accès est maintenant enregistré.';setTimeout(function(){showActivated(record)},650)}catch(err){message.textContent=err&&err.message?err.message:'Connexion impossible. Réessayez avec Internet.'}finally{button.disabled=false}});
+document.getElementById('enterSpace').addEventListener('click',function(){if(!getSaved()){showActivation();return}location.href='jb.html'});document.getElementById('browseCatalogue').addEventListener('click',function(){activated.classList.add('hidden');window.scrollTo(0,0)});
+/* Campaigns use the console's local clock. No network or remote campaign flag required. */
+function dateKey(d){return d.getFullYear()*10000+(d.getMonth()+1)*100+d.getDate()}
+function applySeason(){var now=new Date(),key=dateKey(now),banner=document.getElementById('seasonBanner'),eyebrow=document.getElementById('heroEyebrow'),txt='Bienvenue chez ViralTech Market · Découvrez nos solutions toute l’année.',cls='';
+if(key>=20261126&&key<=20261130){txt='BLACK FRIDAY VIRALTECH · Découvrez nos offres et contactez-nous pour connaître les disponibilités.';cls='blackfriday';eyebrow.textContent='Édition Black Friday · 26–30 novembre 2026'}
+else if((now.getMonth()===11&&now.getDate()>=1&&now.getDate()<=26)){txt='Joyeuses fêtes avec ViralTech Market · Nos univers technologiques vous accompagnent pendant cette période.';cls='christmas';eyebrow.textContent='Édition de Noël · 1er–26 décembre'}
+else if((now.getMonth()===11&&now.getDate()>=27)||(now.getMonth()===0&&now.getDate()<=15)){txt='Cap sur une nouvelle année · ViralTech Market vous accompagne dans vos projets.';cls='newyear';eyebrow.textContent='Édition fin d’année · jusqu’au 15 janvier'}
+else{eyebrow.textContent='Votre partenaire technologique'}
+banner.className='season '+cls;banner.textContent=txt;document.getElementById('yearNow').textContent=now.getFullYear();var dateNode=document.getElementById('localDate');if(dateNode)dateNode.textContent=' · '+now.toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}
+applySeason();window.addEventListener('focus',applySeason);document.addEventListener('visibilitychange',function(){if(!document.hidden)applySeason()});setInterval(applySeason,60000);
 })();
-</script>
-<script src="launch.js"></script>
-</body>
-</html>
+</script></body></html>

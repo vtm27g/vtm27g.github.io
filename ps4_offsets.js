@@ -1,3 +1,47 @@
+export const REQUIRED_KEYS = [
+  "fw_status",
+  "wk_expm1_builtin",
+  "wk_JSFunction_m_function",
+  "wk_POP_RDI_RET",
+  "wk_POP_RSI_RET",
+  "wk_POP_RDX_RET",
+  "wk_POP_RCX_RET",
+  "wk_POP_RAX_RET",
+  "wk_POP_R8_RET",
+  "wk_POP_R9_RET",
+  "wk_LEAVE_RET",
+  "wk_MOV_QWORD_PTR_RDI_RAX_RET",
+  "wk_MOV_RDI_RSI_30_CALL",
+  "wk_POP_RAX_MOV_RAX_JMP_18",
+  "wk_PUSH_RBP_MOV_RBP_RSP_10",
+  "wk_MOV_RDI_RAX_8_CALL_20",
+  "wk_MOV_RDX_RAX_18_CALL_10",
+  "wk_PUSH_RDX_POP_RSP_RET",
+  "pivot_view_sp",
+  "wk_ArrayBuffer_m_impl",
+  "wk_ArrayBuffer_m_contents_m_data",
+  "wk___imp___error",
+  "k__error",
+  "k_scan_stage1",
+  "k_scan_stage2",
+  "k_evf_cv",
+  "k_sysent_661",
+  "k_jmp_rsi",
+];
+export const OPTIONAL_KEYS = [
+  "k_stubs",
+  "wk___imp_pthread_create",
+  "k_pthread_create",
+
+  "kpatch",
+
+  "payload",
+
+  "alias_of",
+
+  "k_idt_rsvd",
+];
+
 export const PS4 = {
   "11.00": {
     fw_status: "state=proven step4q=90/0 reboot=0 kernel_rvas=5/5-vs-dump",
@@ -598,61 +642,6 @@ PS4["12.52"] = Object.assign({}, PS4["12.50"], {
     "kernel_rvas=STILL-UNVERIFIED but corroborated via 12.02+13.00 dumps " +
     "kpatch=1250.bin bug=poops",
   kpatch: "1250.bin",
-});
-
-
-PS4["14.00"] = Object.assign({}, PS4["13.52"], {
-  alias_of: "13.52-webkit",
-
-  // Reported on screen on every run, so it names what actually runs: the
-  // kernel stage comes from afterglow, and the payload is picked by ?mode.
-  fw_status:
-    "state=14.00 " +
-    "webkit=13.52-identical " +
-    "kernel=afterglow (apm-UAF, own kernel stage) " +
-    "payload=hen.bin|goldhen.bin",
-
-  k_stubs: undefined,
-  wk___imp_pthread_create: undefined,
-  k_pthread_create: undefined,
-
-  k_idt_rsvd: undefined,
-  k_sysctl_handle_int: undefined,
-  k_jmp_rsi: undefined,
-  k_kl_lock: undefined,
-  k_evf_cv: undefined,
-  k_sysent: undefined,
-  k_sysent_661: undefined,
-
-  k_oid_kern_file: undefined,
-  k_oid_maxfilesperproc: undefined,
-  k_oid_maxprocperuid: undefined,
-  k_oid_maxfiles: undefined,
-
-  k_arg1_maxfilesperproc: undefined,
-  k_arg1_maxprocperuid: undefined,
-  k_arg1_maxfiles: undefined,
-
-  k_prison0: undefined,
-  k_rootvnode: undefined,
-});
-
-/* 14.02 inherits the userland offsets from 14.00.
- *
- * Between 13.52 and 14.00, 21 of 22 wk_ fields were already bit-identical --
- * 14.00 runs WebKit from 13.52 verbatim. That 14.02 does the same is assumed,
- * not measured. The assumption is not dangerous: jb.js compares each of the
- * 15 WebKit gadgets byte for byte before it uses one, and stops with
- * GADGET-BAD <name> rather than running on a wrong address. afterglow checks
- * all 14 libc gadgets and the HOST room the same way.
- *
- * The kernel addresses are derived, not inherited -- they live in afterglow.js
- * and they are the only ones written without a check.
- */
-PS4["14.02"] = Object.assign({}, PS4["14.00"], {
-  fw_status:
-    "state=14.02 webkit=inherited-from-14.00 (unmeasured, checked at runtime) " +
-    "kernel=afterglow (apm-UAF, own kernel stage) payload=hen.bin|goldhen.bin",
 });
 
 export function offsetsFor(uaString) {

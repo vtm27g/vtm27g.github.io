@@ -5,7 +5,7 @@ import {
   fakeCellReleased,
   carrierHeaderCopy,
   carrierHomeVector,
-} from "./core.js";
+} from "./core.js?v=10";
 
 let carrier = null;
 
@@ -441,7 +441,7 @@ function proveMagic(note, who, slot, at, expected, context) {
   return record;
 }
 
-function promoteToRealPair(onEvent) {
+export function promoteToRealPair(onEvent) {
   const note = (tag, detail) => {
     pairStatus.stage = tag;
     if (typeof onEvent === "function") {
@@ -910,3 +910,18 @@ export function installWindowP(c, options) {
   return prim;
 }
 
+export {
+  read1,
+  read2,
+  read4,
+  read8,
+  write1,
+  write2,
+  write4,
+  write8,
+  leakval,
+  readInto,
+  toI64,
+  addrNumber,
+  int64,
+};
